@@ -1,8 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
 * {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 html {
@@ -13,11 +15,12 @@ html {
 }
 
 #splash {
-    background: #000 url("../images/hack.jpg") no-repeat center center;
+    background: #000 url("../images/background.jpg") no-repeat center center;
     background-size: cover;
     color: white;
     text-align: center;
-    height: 100%;
+    height: calc(100% - 15px);
+    overflow: hidden;
 }
 
 #splash .container {
@@ -26,6 +29,18 @@ html {
     width: 100%;
     margin: 0 auto;
     height: 100%;
+}
+
+#splash .logo {
+    width: 190px;
+}
+
+#splash .sub {
+    font-weight: 300;
+    font-family: 'Noto Sans Japanese', serif;
+    opacity: .75;
+    margin: -4px 0;
+    font-size: 12px;
 }
 
 #splash h1 {
@@ -46,12 +61,196 @@ html {
 }
 
 #splash .video-cta{
-    height: 148px;
+    height: 88px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -74px;
-    margin-top: -74px;
+    margin-left: -44px;
+    margin-top: -51px;
+    opacity: .83;
+}
+
+.menu {
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    background: transparent;
+    border-radius: 100px;
+    color: white;
+    border: 2px solid white;
+    line-height: 138px;
+    font-size: 55px;
+    font-weight: 100;
+    font-family: 'Noto Sans Japanese', serif;
+    display: none;
+}
+
+body.show .menu {
+    display: block;
+}
+
+.m1 {
+    transform: translateY(-250%);
+    margin-top: -6px;
+}
+
+.m2 {
+    transform: translateY(50%);
+    margin-top: -6px;
+}
+
+.m3 {
+    margin-top: -6px;
+    transform: translateY(-100%) translateX(-150%);
+}
+
+.m4 {
+    margin-top: -6px;
+    transform: translateY(-100%) translateX(150%);
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: calc(100% - 40px);
+    opacity: .73;
+    font-family: 'Noto Sans Japanese', serif;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+div.mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,.42);
+    z-index: -1;
+}
+
+p.date {
+    margin: 0;
+    position: absolute;
+    width: 120px;
+    font-weight: 100;
+    font-size: 11px;
+    margin-left: -12px;
+    text-align: center;
+    opacity: .855;
+    font-weight: 300;
+    font-family: "メイリオ","Hiragino Kaku Gothic Pro",Meiryo,"ヒラギノ角ゴ Pro W3","MS PGothic","MS UI Gothic",Helvetica,Arial,sans-serif;
+}
+
+body.show p.date {
+    opacity: 0;
+}
+
+body.show #Triangle-1 {
+  display: none;
+}
+
+body.show .logo {
+  display: none;
+}
+
+body.show .sub {
+  display: none;
+}
+
+body.show .help {
+  display: none;
+}
+
+.title {
+  display: none;
+}
+
+body.play .title {
+  display: block;
+}
+
+.mask {
+  display: none;
+}
+
+body.show .mask {
+  display: block;
+}
+
+.face {
+    opacity: 0.87;
+    width: 88px;
+    height: 88px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+.heart {
+    width: 51px;
+    height: 51px;
+    margin-top: 19px;
+    margin-left: 17px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+.menu.m5 {
+  display: none !important;
+}
+
+body.play .heart, body.play .m5 {
+  display: block !important;
+}
+
+#cross {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-top: 26px;
+    margin-left: 26px;
+    width: 38px;
+    display: none;
+}
+
+body.show #cross {
+    display: block;
+}
+
+#splash.happy .m5 {
+    transform: translateY(-250%);
+    margin-top: -6px;
+}
+
+#splash.sad .m5 {
+    transform: translateY(50%);
+    margin-top: -6px;
+}
+
+#splash.angry .m5 {
+    margin-top: -6px;
+    transform: translateY(-100%) translateX(-150%);
+}
+
+#splash.fun .m5 {
+    margin-top: -6px;
+    transform: translateY(-100%) translateX(150%);
+}
+
+body.happy .m1, body.sad .m2, body.angry .m3, body.fun .m4 {
+    display: none;
+    transform: translateY(-100%);
+    margin-top: -6px;
+}
+
+.hide {
+  display: none;
 }
 
 
