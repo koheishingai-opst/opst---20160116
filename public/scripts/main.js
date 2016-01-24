@@ -1,4 +1,7 @@
 (function(){
+document.addEventListener("touchmove", function(evt) {
+    evt.preventDefault();
+}, false);
 
   $play = $("#playbutton, #cross");
   $body = $("body");
@@ -21,6 +24,8 @@
   $sad_t = false;
   $angry_t = false;
   $fun_t = false;  
+  $menu = $('#menu');
+  $html = $('html');
   
   $d = new Date();
   $y = $d.getFullYear();
@@ -216,5 +221,8 @@
         }
       }
     }), 1000);
+  });
+  $menu.click(function(){
+    $html.toggleClass('side');
   });
 }());
