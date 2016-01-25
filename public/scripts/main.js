@@ -30,6 +30,7 @@ document.addEventListener("touchmove", function(evt) {
   $history = $('.history');
   $setting = $('.setting');
   $m_menu = $('.modal-menu');
+  $ctg = $('.ctg');
   
   $d = new Date();
   $y = $d.getFullYear();
@@ -240,5 +241,16 @@ document.addEventListener("touchmove", function(evt) {
   });
   $m_menu.click(function(){
     $body.removeClass('on-favorite').removeClass('on-history').removeClass('on-setting');
+  });
+  $ctg.click(function(){
+    if($(this).hasClass("r1") !== true && $(this).hasClass("r2") !== true && $(this).hasClass("r3") !== true){
+      $(this).addClass("r1");
+    } else if ($(this).hasClass("r1") === true && $(this).hasClass("r2") !== true && $(this).hasClass("r3") !== true) {
+      $(this).addClass("r2");
+    } else if ($(this).hasClass("r1") === true && $(this).hasClass("r2") === true && $(this).hasClass("r3") !== true) {
+      $(this).addClass("r3");
+    } else if ($(this).hasClass("r1") === true && $(this).hasClass("r2") === true && $(this).hasClass("r3") === true) {
+      $(this).removeClass("r1").removeClass("r2").removeClass("r3");
+    }
   });
 }());

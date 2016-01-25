@@ -629,6 +629,15 @@ position: absolute;
     background-size: 75px;
     background-position: 20px 18px;
 }
+.wraps .ctg.r1 .icon {
+  background-color: rgba(232, 64, 64, .333);
+}
+.wraps .ctg.r1.r2 .icon {
+  background-color: rgba(232, 64, 64, .666);
+}
+.wraps .ctg.r1.r2.r3 .icon {
+  background-color: rgb(232, 64, 64);
+}
 @media only screen and (max-width: 600px) {
   #splash .container {
       min-height: 480px;
@@ -644,6 +653,9 @@ position: absolute;
   }
 }
 @media (max-width: 43.75em) {
+  .ctg-fix{
+    transform: translateY(-25px);
+  }
   .button {
     /* float: none; */
   }
