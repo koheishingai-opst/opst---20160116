@@ -26,6 +26,10 @@ document.addEventListener("touchmove", function(evt) {
   $fun_t = false;  
   $menu = $('#menu');
   $html = $('html');
+  $favorite = $('.favorite');
+  $history = $('.history');
+  $setting = $('.setting');
+  $m_menu = $('.modal-menu');
   
   $d = new Date();
   $y = $d.getFullYear();
@@ -51,7 +55,7 @@ document.addEventListener("touchmove", function(evt) {
     }
     clearInterval($happy_t);
     clearInterval($sad_t);
-    $audio_sound.play();
+    //$audio_sound.play();
   });
   
   $m_happy.click(function(){
@@ -65,7 +69,7 @@ document.addEventListener("touchmove", function(evt) {
     $audio_sad.pause();
     $audio_angry.pause();
     $audio_fun.pause();
-    $audio_happy.play();
+    //$audio_happy.play();
     var count = 0;
     var span = 0;
     $happy_t = setInterval((function() {
@@ -87,7 +91,7 @@ document.addEventListener("touchmove", function(evt) {
         if ($audio_news_.attr("src") !== "./sounds/h" + count + ".mp3") {
           span = $news_happy[count][1];
           $audio_news_.attr("src", "./sounds/h" + count + ".mp3");
-          $audio_news.play();
+          //$audio_news.play();
         }
         span--;
         if (span < 0) {
@@ -108,7 +112,7 @@ document.addEventListener("touchmove", function(evt) {
     $audio_happy.pause();
     $audio_angry.pause();
     $audio_fun.pause();
-    $audio_sad.play();
+    //$audio_sad.play();
     var count = 0;
     var span = 0;
     $sad_t = setInterval((function() {
@@ -129,7 +133,7 @@ document.addEventListener("touchmove", function(evt) {
         if ($audio_news_.attr("src") !== "./sounds/s" + count + ".mp3") {
           span = $news_sad[count][1];
           $audio_news_.attr("src", "./sounds/s" + count + ".mp3");
-          $audio_news.play();
+          //$audio_news.play();
         }
         span--;
         if (span < 0) {
@@ -150,7 +154,7 @@ document.addEventListener("touchmove", function(evt) {
     $audio_happy.pause();
     $audio_angry.pause();
     $audio_sad.pause();
-    $audio_fun.play();
+    //$audio_fun.play();
     var count = 0;
     var span = 0;
     $fun_t = setInterval((function() {
@@ -171,7 +175,7 @@ document.addEventListener("touchmove", function(evt) {
         if ($audio_news_.attr("src") !== "./sounds/f" + count + ".mp3") {
           span = $news_fun[count][1];
           $audio_news_.attr("src", "./sounds/f" + count + ".mp3");
-          $audio_news.play();
+          //$audio_news.play();
         }
         span--;
         if (span < 0) {
@@ -192,7 +196,7 @@ document.addEventListener("touchmove", function(evt) {
     $audio_sad.pause();
     $audio_happy.pause();
     $audio_fun.pause();
-    $audio_angry.play();
+    //$audio_angry.play();
     var count = 0;
     var span = 0;
     $angry_t = setInterval((function() {
@@ -213,7 +217,7 @@ document.addEventListener("touchmove", function(evt) {
         if ($audio_news_.attr("src") !== "./sounds/a" + count + ".mp3") {
           span = $news_angry[count][1];
           $audio_news_.attr("src", "./sounds/a" + count + ".mp3");
-          $audio_news.play();
+          //$audio_news.play();
         }
         span--;
         if (span < 0) {
@@ -224,5 +228,17 @@ document.addEventListener("touchmove", function(evt) {
   });
   $menu.click(function(){
     $html.toggleClass('side');
+  });
+  $favorite.click(function(){
+    $body.toggleClass('on-favorite');
+  });
+  $history.click(function(){
+    $body.toggleClass('on-history');
+  });
+  $setting.click(function(){
+    $body.toggleClass('on-setting');
+  });
+  $m_menu.click(function(){
+    $body.removeClass('on-favorite').removeClass('on-history').removeClass('on-setting');
   });
 }());

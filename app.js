@@ -28,6 +28,8 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/proto1', routes.index);
+app.get('/proto2', routes.index2);
 app.get('/happy_m', routes.happy_m);
 app.get('/users', user.list);
 

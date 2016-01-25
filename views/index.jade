@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title
+    title De-vision Proto1
     meta(charset="utf8")
     meta(content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no', name='viewport', user-scalable='no')
     meta(name='google-signin-scope', content='profile email')
@@ -11,7 +11,7 @@ html
   body#splash
     div.container
       img.logo(src="./images/logo.png")
-      p.sub みないできけるコンテンツ
+      p.sub みないできけるニュース
       div.login-wrap
         .google.button
           .g-signin2(data-onsuccess='onSignIn', data-theme='dark')
@@ -38,13 +38,13 @@ html
                   polygon#Triangle-1(fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(47.000000, 43.000000) rotate(90.000000) translate(-47.000000, -43.000000) " points="47 29 61 57 33 57 ")
             img#cross(src="./images/cross.svg")
           div.menu.m1
-            img.face(src="./images/science.svg")
+            img.face(src="./images/three3.svg")
           // div.menu.m2
             img.face(src="./images/sad.svg")
           div.menu.m3
-            img.face(src="./images/sunny.svg")
+            img.face(src="./images/left.svg")
           div.menu.m4
-            img.face(src="./images/us.svg")
+            img.face(src="./images/left.svg")
           div.menu.m5
             img.heart(src="./images/heart.svg")
           p.date 2016年1月17日
@@ -57,15 +57,46 @@ html
             p.name 再生履歴
           .setting
             p.name 再生設定
-          .logout ログアウト
+          .logout(onclick="signOut();") ログアウト
       div.hide
         // .g-signin2(data-onsuccess='onSignIn', data-theme='dark')
         // fb:login-button(scope='public_profile,email', onlogin='checkLoginState();')
         #status
       footer
         p.help つかいかた
-        p.title 
+        p.title 記録的寒さ 博多氷点下4.4度
       div.mask-main
+      div.mask
+    div.favorite-wrap.wraps
+      .modal-menu
+      h1.modal-title お気に入り
+      .content
+        section.s01
+          span 2016/1/25
+          h2 記録的寒さ 博多氷点下4.4度
+        section.s02
+          span 2016/1/25
+          h2 IT企業の自動車開発 想定以上
+    div.history-wrap.wraps
+      .modal-menu
+      h1.modal-title 再生履歴
+      .content
+    div.setting-wrap.wraps
+      .modal-menu
+      h1.modal-title 再生設定
+      .content
+        .ctg.c01
+          .icon.weather
+            p.name 天気
+        .ctg.c02
+          .icon.science
+            p.name 科学
+        .ctg.c03(style="transform: translateY(-25px);")
+          .icon.happy
+            p.name 嬉しい
+        .ctg.c03(style="transform: translateY(-25px);")
+          .icon.sad
+            p.name 悲しい
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
   script(src="./scripts/main.js")
   script.
@@ -83,6 +114,13 @@ html
     $('.prof-image > p.name').text(profile.getName());
     $('body').addClass('login');
     };
+    function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+    console.log('User signed out.');
+    location.reload();
+    });
+    }
   script.
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
